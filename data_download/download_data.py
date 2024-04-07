@@ -12,7 +12,7 @@ if __name__ == "__main__":
     news_df = news_df['text']
     res = []
 
-    for text in news_df.head(100):
+    for text in news_df.head(1000):
         message = [
             {
                 "role": "system",
