@@ -3,10 +3,10 @@ import pandas as pd
 from data_download.YandexGPT_API import YandexGPTApi
 
 # File paths and configurations
-FILE_NAME = './data_portioned/data_1'
+FILE_NAME = './data_portioned/data_1.csv'
 CONFIG_FILE = 'config.ini'
 PROMPT_FILE = 'prompt_1.txt'
-RESULT_FILE = 'result_1.csv'
+RESULT_FILE = './data_portioned_ids/ids_1.csv'
 
 
 def process_text(prompt, text):
@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     # Process each text in the DataFrame
     res = []
-    for text in news_df['text'].head(10):
+    for text in news_df['text']:
         result = process_text(prompt, text)
         if result is not None:
             res.append(result)
