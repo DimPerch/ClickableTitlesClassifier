@@ -1,17 +1,18 @@
 import keras
-import pickle
 import pandas as pd
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 class ClassificationModel:
-    def __init__(self, model='../models/saved_data/classifier.keras', auxiliary_file='../models/saved_data/tokenizer.pkl'):
+    def __init__(self, model='../models/saved_data/classifier.keras', auxiliary_file='../models/saved_data/auxiliary_file.csv'):
         self.vocab_size = 5000
         self.max_len = 100
+        text = pd.read_csv(auxiliary_file)["title"].values
         self.saved_model = keras.saving.load_model(model)
-        with open(auxiliary_file, 'rb') as f:
-            self.tokenizer = pickle.load(f)
+        self.tokenizer = Tokenizer(num_words=self.vocab_size)
+        self.tokenizer.fit_on_texts(text)
+
 
     def get_prediction(self, text):
         input_text = [text]

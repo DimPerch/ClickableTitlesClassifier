@@ -6,28 +6,23 @@
 1. **Классификатор кликбейтных заголовков**: Модель, которая анализирует заголовки статей и определяет, являются ли они кликбейтными.
 2. **Генератор кликбейтных заголовков**: Модель, которая преобразует обычные заголовки статей в кликбейтные, помогая понять, как могут быть искажены первоначальные сообщения для привлечения внимания.
 
-
 ## Пример использования
 
- <img src="/img/classification_example.PNG" alt="classification_example" style="height: 600px; width:280px;"/>
+ <img src="/img/classification_example.PNG" alt="classification_example"/>
 
- <img src="/img/generation_example.PNG" alt="classification_example" style="height: 600px; width:280px;"/>
+ <img src="/img/generation_example.PNG" alt="generation_example"/>
 
 # Структура проекта на GitHub
-1. **app**
-   - `streamlit` - файлы для StreamLit проекта
+1. `app`
+   - `classes` - классификатор и генератор заголовков кликбейтных новостей
+   - файлы для Streamlit проекта
 
-2. **models**
-   - `saved_data`
-     - `classifier` - модель классификатора (тип: Keras)
-     - `auxiliary_data` - вспомогательный файл (тип: CSV)
-   - `classes`
-     - `clickbait_classifier` - классификатор и генератор заголовков кликбейтовых новостей
-   - `model_training`
-     - Jupyter Notebooks с обучением классификатора и генератора
+2. `data_collection`
+   - файлы для сбора и предобработки данных
 
-3. **data_collection**
-   - Скрипты для сбора данных
+3. `models`
+   - `models_training` - Jupyter Notebooks с обучением классификатора и генератора
+   - `saved_data` - вспомогательный файлы
 
-4. **files**
-   - Все собранные файлы
+4. `files`
+   - Все собранные данные с помощью YandexGPT и Kaggle
