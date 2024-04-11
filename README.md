@@ -8,9 +8,9 @@
 
 ## Пример использования
 
- <img src="/img/classification_example.PNG" alt="classification_example"/>
+ <img src="/img/classification_example.jpeg" alt="classification_example"/>
 
- <img src="/img/generation_example.PNG" alt="generation_example"/>
+ <img src="/img/generation_example.jpg" alt="generation_example"/>
 
 # Структура проекта на GitHub
 1. `app`
