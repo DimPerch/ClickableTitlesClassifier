@@ -15,6 +15,7 @@ def main():
                                    placeholder="Давление 120/80 будет всегда, если по утрам...",
                                    key='check_title')
         submit_classification = st.form_submit_button(label='Узнать!')
+
     if submit_classification:
         print(st.session_state.check_title)
         probability = classifier.get_prediction(st.session_state.check_title)
